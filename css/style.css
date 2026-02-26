@@ -1,0 +1,218 @@
+:root {
+    --primary-color :#242222;
+    --secondary-color:rgb(255, 187, 0);
+    --accent:rgb(255, 255, 255);
+
+}
+a {
+    text-decoration: none;
+    list-style-type: none;
+}
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+    color: var(--accent);
+    text-decoration: none;
+    list-style-type: none;
+    background-color:var(--primary-color) ;
+    scroll-behavior: smooth;
+    /* width: 80%; */
+    border: none;
+    /* height: 2000px; */
+}
+main {
+    width: 85%;
+    margin:0 auto;
+    /* height: 100vh; */
+    
+}
+
+/* navbar start */
+.navbar {
+    z-index: 99999;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top:0;
+    display: flex;
+    background: var(--primary-color);
+    justify-content: space-around;
+    align-items: center;
+    padding: 1.5rem 10%;
+    color: var(--accent);
+    border-bottom: 1px solid rgba(255, 187, 0, 0.2);
+}
+.navbar .nav-logo {
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.navbar .nav-logo a{
+    color: var(--secondary-color);
+}
+.navbar .nav-menu {
+    display: flex;
+    gap: 4rem;
+    /* justify-content: space-between; */
+    font-weight: 600;
+    margin: auto;
+}
+.nav-menu a {
+    color: var(--secondary-color);
+}
+.nav-menu a:hover{
+    color: var(--accent);
+    transition: 0.2s ease-in;
+}
+
+
+#hamburger{
+    display: flex;
+    flex-direction: column;
+    /* padding: 0.5rem 0; */
+    gap: 0.4rem;
+}
+#hamburger span {
+    height: 2.5px;
+    background-color: var(--secondary-color);
+}
+
+/* navbar end */
+
+/* hero section */
+.hero {
+    margin-top: 5rem;
+    display: flex;
+    height: 100vh;
+    /* background-position:right top;
+    background-repeat: no-repeat;
+    background-size:cover ;
+    background-image: url(/assets/img/hero.png); */
+    /* height: 100%; */
+    /* width: 100vw; */
+    /* background-size: 33%; */
+    /* background:linear-gradient(left rgba(0,0,0,0.2)); */
+}
+.hero .hero-bg{
+    position: absolute;
+    /* display: flex; */
+    /* order: 3; */
+    z-index:-9999;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.2;
+    /* overflow: auto; */
+    /* background-position: right; */
+    /* object-fit:none; */
+    right: 0;
+    top: 0;
+    /* width: 50%; */
+}
+/* .hero .hero-bg::after{
+    content: ('gradient');
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 30%;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+} */
+.hero .container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 3rem;
+    /* gap: 2rem; */
+    padding: 2rem 0;
+    margin: auto 0;
+    /* mix-blend-mode: difference; */
+}
+.hero .container h1 {
+    font-size: 3rem;
+}
+.hero .container h1 span{
+    color: var(--secondary-color);
+    /* font-size: 2rem; */  
+}
+.hero .container h3{
+    /* padding: 1rem 0; */
+    margin-bottom: 1rem;
+}
+.hero .container p{
+    width: 50%;
+    text-align: justify;
+    /* letter-spacing: 10px; */
+    
+}
+.hero .container .cta {
+    display: flex;
+    gap: 3rem;
+    
+    margin-top: 5rem;
+    /* bottom: 1rem; */
+}
+.hero .container .cta a{
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    padding: 0.7rem 2rem;
+    border-radius: 9px;
+    font-weight: 600;
+    box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.8);
+}
+
+/* media query */
+/* laptop */
+@media (max-width:1240px) {
+    body {
+        font-size: 80%;
+    }
+    .hero .hero-bg {
+        background-size:contain;
+    }
+    .hero .container p{
+    width: 80%;
+    text-align: justify;
+    
+}
+}
+/* tablet */
+@media (max-width:768px) {
+    .navbar {
+        justify-content: space-between;
+    }
+    .navbar .nav-menu {
+        height: 25vh;
+        width: 100%;
+        left: 0;
+        right: 0;
+        padding: 2rem 0;
+        position: absolute;
+        top: 5rem;
+        background-color: var(--secondary-color);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        transform: scaleY(0);
+        transform-origin: 50% 0 0;
+        transition: 0.2s ease-out;
+    }
+    .navbar .nav-menu.active{
+        transform: scaleX(1);
+    }
+    .navbar .nav-menu a{
+        color: var(--primary-color);
+
+    }
+    
+    #hamburger span{
+        width: 2rem;
+
+    }
+
+    .hero .hero-bg {
+        background-size: 20%;
+    }
+}
